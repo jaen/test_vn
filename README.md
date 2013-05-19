@@ -1,30 +1,31 @@
 # Sample VN organisation
 
-## Generale rules (or rather random thought dump)
+## General rules (or rather random thought dump)
 
-    * lowercase letters only (+ digits if really required), no weird characters, underscores instead of spaces,
-    * keep to the structure; if you think an asset doesn't really fit any of categories you can probably make a new directory for it in your branch and bring it up somewhere,
-    * DRY, that is - Don't Repeat Yourself - if you think you'll be using something more than once it's probably good to put it into a separate name under a symbolic name (using Ren'Py's `define` directive), compare with how characters or music files are factored in their respective directories; if something comes up it's easier to change if it's only one place you have to change it in, than everywhere around the whole codebase,
-    * with that in mind - use descriptive names for symbolic names, so that they will be unlikely to change,
-    * that said, assets themselves would do good to have descriptive names too,
-    * Ren'Py keeps everything in one global scope - that is regardless of file you define, say, a label or character, it is visible in all other files. Which means that when you use mundane name like "pick_up_cup" for a seemingly local thing such as a label be aware there may be some hardcore cup picking action in another route and kablam, you're fucked.
-    Keeping that in mind it's a good idea to manually "namespace" the labels and whatnot, compare with sample start label names (`ER_Act1_Day1_Start`); in the case of factoring out common constants mentioned in the third bullet you can and should skip this "namespacing", since everyone is expected to use the same constant,
-    * read Ren'Py documentation, it helps to have a vague idea of how this thing works.
+ * lowercase letters only (+ digits if really required), no weird characters, underscores instead of spaces,
+ * keep to the structure; if you think an asset doesn't really fit any of categories you can probably make a new directory for it in your branch and bring it up somewhere,
+ * DRY, that is - Don't Repeat Yourself - if you think you'll be using something more than once it's probably good to put it into a separate name under a symbolic name (using Ren'Py's `define` directive), compare with how characters or music files are factored in their respective directories; if something comes up it's easier to change if it's only one place you have to change it in, than everywhere around the whole codebase,
+ * with that in mind - use descriptive names for symbolic names, so that they will be unlikely to change,
+ * that said, assets themselves would do good to have descriptive names too,
+ * Ren'Py keeps everything in one global scope - that is regardless of file you define, say, a label or character, it is visible in all other files. Which means that when you use mundane name like "pick_up_cup" for a seemingly local thing such as a label be aware there may be some hardcore cup picking action in another route and kablam, you're fucked.
+ Keeping that in mind it's a good idea to manually "namespace" the labels and whatnot, compare with sample start label names (`ER_Act1_Day1_Start`); in the case of factoring out common constants mentioned in the third bullet you can and should skip this "namespacing", since everyone is expected to use the same constant,
+ * read Ren'Py documentation, it helps to have a vague idea of how this thing works.
 
 ## Assets
 
 Assets are divided into these general categories:
 
-    * art
-    * audio
-    * story
+ * art
+ * audio
+ * story
 
 ## Art
 
 Art is so far divided into `characters` and `locations` directories, but that's just to give an example - I imagine more will probably be needed (like `sfx`, `event_cg` and whatnot).
 Each folder is further subdivided into corresponding categories - in `characters` folder each character has his/hers own folder; in `locations` folder it's divided per logical location, say `bellforest`, `onboard_gekko` or something.
 You can subdivide location further if you feel it's necessary, say `bellforest/school`, `bellforest/rentons_house`, `bellforest/rentons_house/garage/destroyed`, `bellforest/rentons_house/rentons_room`, `onboard_gekko/bridge`, `onboard_gekko/infirmary`, and so on.
-I agree that this many nested folders may sounds somewhat uncommonsensey, but that's just to show what I have in mind with regard to assets grouping. In practice the rule of thumb should be: a folder grouping assets is a good idea if you have more than a couple of related CGs for this character/area (say, each location has a night and day version with some variations or something). You could even consider doing it for characters if there would be day and night versions of sprites.
+I agree that this many nested folders may sounds somewhat uncommonsensey, but that's just to show what I have in mind with regard to assets grouping.
+In practice the rule of thumb should be: a folder grouping assets is a good idea if you have more than a couple of related CGs for this character/area (say, each location has a night and day version with some variations or something). You could even consider doing it for characters if there would be day and night versions of sprites.
 It all depends of how many assets will you produce, find the point where having them in folders gives you much needed structure (it's easier to find a file if you know where to look than to sift through hundreds of files dumped in that one unlucky folder), but is not yet a hassle.
 
 Ren'Py has a concept of tags for images - it looks for image most closely matching tags given in the script and uses it. 
