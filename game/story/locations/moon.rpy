@@ -1,0 +1,1 @@
+image bg Moon light clouds = "art/locations/moon/moon_light_clouds.jpg"

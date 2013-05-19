@@ -1,0 +1,1 @@
+define intro_music = "audio/music/intro_music.mp3"
